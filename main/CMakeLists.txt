@@ -349,7 +349,7 @@ if(Embroidery OR EMBROIDERY_ENABLE EQUAL 1)
 list (APPEND SRCS ${EMBROIDERY_SOURCE})
 endif()
 
-idf_component_register(SRCS "${SRCS}" INCLUDE_DIRS ".")
+idf_component_register(SRCS "spi.c" "BlackBoxX32.c" "${SRCS}" INCLUDE_DIRS ".")
 
 target_compile_definitions("${COMPONENT_LIB}" PUBLIC GRBL_ESP32)
 target_compile_definitions("${COMPONENT_LIB}" PUBLIC OVERRIDE_MY_MACHINE)
@@ -623,3 +623,7 @@ unset(LASERCOOLANT CACHE)
 target_compile_options("${COMPONENT_LIB}" PRIVATE -Wimplicit-fallthrough=1 -Wno-missing-field-initializers -Wno-maybe-uninitialized -Wno-stringop-truncation)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+DS ON)
+
+)
