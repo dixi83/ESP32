@@ -44,7 +44,7 @@
 #if WIFI_ENABLE || ETHERNET_ENABLE
 
 //#define TELNET_ENABLE           1
-#define WEBSOCKET_ENABLE        1
+//#define WEBSOCKET_ENABLE        1
 //#define NETWORK_TELNET_PORT     23
 //#define NETWORK_FTP_PORT        21
 //#define NETWORK_HTTP_PORT       80
