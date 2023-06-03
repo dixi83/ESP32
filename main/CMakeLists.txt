@@ -34,16 +34,16 @@ OPTION(I2SStepping "Use I2S Stepping" OFF)
 # The following plugin options are supported:
 
 # Networking and WebUI plugin options
-OPTION(WiFi "Wifi + protocols" ON)
+OPTION(WiFi "Wifi + protocols" OFF)
 OPTION(Ethernet "Ethernet + protocols" OFF) # NOTE: no board maps has support for this!
 OPTION(Bluetooth "Bluetooth" OFF)
-OPTION(SoftAP "Enable soft AP mode" ON) # WiFi only
+OPTION(SoftAP "Enable soft AP mode" OFF) # WiFi only
 OPTION(FtpDaemon "Enable ftp daemon" OFF) # Requires SDcard On
 OPTION(WebDAV "Enable WebDAV protocol" OFF) # Requires SDcard On
 OPTION(mDNS "Enable mDNS protocol" OFF)
 OPTION(SSDP "Enable SSDP protocol" OFF)
 OPTION(MQTTclient "Enable MQTT client API" OFF) # For use by plugin code.
-OPTION(WebUI "WebUI services" ON)
+OPTION(WebUI "WebUI services" OFF)
 OPTION(WebAuth "WebUI authentication" OFF)
 
 # SD Card plugin options
