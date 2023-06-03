@@ -44,7 +44,7 @@
 #if WIFI_ENABLE || ETHERNET_ENABLE
 
 //#define TELNET_ENABLE           1
-//#define WEBSOCKET_ENABLE        1
+#define WEBSOCKET_ENABLE        1
 //#define NETWORK_TELNET_PORT     23
 //#define NETWORK_FTP_PORT        21
 //#define NETWORK_HTTP_PORT       80
@@ -158,6 +158,8 @@ typedef struct {
 #elif defined(BOARD_BDRING_V3P5)
   #include "bdring_v3.5_map.h"
 #elif defined(BOARD_BDRING_I2S6A)
+  #include "bdring_i2s_6_axis_map.h"
+#elif defined(BOARD_BDRING_I2S_6PACK_EXT_V2)
   #include "bdring_i2s_6_axis_map.h"
 #elif defined(BOARD_ESPDUINO32)
   #include "espduino-32_wemos_d1_r32_uno_map.h"
