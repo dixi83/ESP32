@@ -66,13 +66,13 @@
 
 // WiFi Access Point (AP) settings
 #if WIFI_SOFTAP
-//#define NETWORK_AP_HOSTNAME     "grblHAL_AP"
-//#define NETWORK_AP_IP           "192.168.5.1"
-//#define NETWORK_AP_GATEWAY      "192.168.5.1"
-//#define NETWORK_AP_MASK         "255.255.255.0"
-//#define NETWORK_AP_SSID         "grblHAL_AP"
-//#define NETWORK_AP_PASSWORD     "grblHALpwd" // Minimum 8 characters, or blank for open
-#define WIFI_MODE WiFiMode_AP; // OPTION: WiFiMode_APSTA
+#define NETWORK_AP_HOSTNAME     "grblHAL_AP"
+#define NETWORK_AP_IP           "192.168.5.1"
+#define NETWORK_AP_GATEWAY      "192.168.5.1"
+#define NETWORK_AP_MASK         "255.255.255.0"
+#define NETWORK_AP_SSID         "grblHAL_AP"
+#define NETWORK_AP_PASSWORD     "Klaasvaak123" // Minimum 8 characters, or blank for open
+//#define WIFI_MODE WiFiMode_AP; // OPTION: WiFiMode_APSTA
 #else
 #define WIFI_MODE WiFiMode_STA; // Do not change!
 #endif
