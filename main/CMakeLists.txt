@@ -7,7 +7,8 @@ OPTION(BOARD_BLACKBOX_X32 "Compile for BlackBox X32" OFF)
 OPTION(BOARD_BDRING_V3P5 "Compile for v3.5 3-axis board" OFF)
 OPTION(BOARD_BDRING_V4 "Compile for bdring v4 3-axis board" OFF)
 OPTION(BOARD_BDRING_I2S6A "Compile for bdring 6-axis I2S board - untested!" OFF)
-OPTION(BOARD_BDRING_I2S_6PACK_EXT_V2 "Compile for bdring 6-pack external drivers I2S board" ON)
+OPTION(BOARD_FLUIDNC_I2S_6PACK_UNI "Compile for FluidNC 6-pack universal I2S board" OFF)
+OPTION(BOARD_FLUIDNC_I2S_6PACK_EXT_V2 "Compile for FluidNC 6-pack external drivers I2S board" ON)
 OPTION(BOARD_CNC_BOOSTERPACK "Compile for CNC BoosterPack" OFF)
 OPTION(BOARD_ESPDUINO32 "Compile for ESPDUINO-32 Wemos D1 R32" OFF)
 OPTION(BOARD_SOURCERABBIT_4AXIS "Compile for SourceRabbit 4-axis board" OFF)
@@ -85,6 +86,25 @@ OPTION(Embroidery "Embroidery" OFF)
 
 # Add my_plugin.c to compilation, add my_plugin.c to the main folder first
 OPTION(AddMyPlugin "Add my_plugin.c" OFF)
+
+# FluidNC option cards
+#   > enable the option cards by changing "OFF" to the number of the slot where they where put.
+#   > the last option slot can only contain output modules. (slot 5 for the universal controller and slot 3 for the external drives controller)
+#   > for the configuration it makes no difference if there is a 5v output or a mosfet output module is installed
+#   > for the external drives controller has 6 input pins already on the board these will be picked as the axis limit pins
+#   > for the universal controller axis limit pins will be picked from the first inut card as XYZA and the second input card BC wit 2 spare inputs
+#   > the RS485 module is untested... 
+OPTION(FluidNC_1st_4x_Input     "FluidNC first  4 input option card" OFF)
+OPTION(FluidNC_2nd_4x_Input     "FluidNC second 4 input option card" OFF)
+OPTION(FluidNC_3rd_4x_Input     "FluidNC third  4 input option card" OFF)
+OPTION(FluidNC_1st_4x_Output    "FluidNC first 4 output option card" OFF)
+OPTION(FluidNC_2nd_4x_Output    "FluidNC second 4 output option card" OFF)
+OPTION(FluidNC_3rd_4x_Output    "FluidNC third 4 output option card" OFF)
+OPTION(FluidNC_1st_Relay_Output "FluidNC first relay output option card" OFF)
+OPTION(FluidNC_1nd_Relay_Output "FluidNC second relay output option card" OFF)
+OPTION(FluidNC_1rd_Relay_Output "FluidNC third relay output option card" OFF)
+OPTION(FluidNC_0_10V_Output     "FluidNC 0-10V output option card" OFF)
+OPTION(FluidNC_RS458            "FluidNC RS485 option card" OFF)
 
 # --- Do not change anything below unless you understand what you are doing ---
 
@@ -369,9 +389,11 @@ target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_BDRING_V3P5)
 elseif(BOARD_BDRING_V4)
 target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_BDRING_V4)
 elseif(BOARD_BDRING_I2S6A)
-target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_BDRING_I2S_6PACK_EXT_V2)
-elseif(BOARD_BDRING_I2S_6PACK_EXT_V2)
 target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_BDRING_I2S6A)
+elseif(BOARD_FLUIDNC_I2S_6PACK_UNI)
+target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_FLUIDNC_I2S_6PACK_UNI)
+elseif(BOARD_FLUIDNC_I2S_6PACK_EXT_V2)
+target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_FLUIDNC_I2S_6PACK_EXT_V2)
 elseif(BOARD_ESPDUINO32)
 target_compile_definitions("${COMPONENT_LIB}" PUBLIC BOARD_ESPDUINO32)
 elseif(BOARD_CNC_BOOSTERPACK)
@@ -568,7 +590,8 @@ unset(BOARD_BLACKBOX_X32 CACHE)
 unset(BOARD_BDRING_V3P5 CACHE)
 unset(BOARD_BDRING_V4 CACHE)
 unset(BOARD_BDRING_I2S6A CACHE)
-unset(BOARD_BDRING_I2S_6PACK_EXT_V2 CACHE)
+unset(BOARD_FLUIDNC_I2S_6PACK_UNI CACHE)
+unset(BOARD_FLUIDNC_I2S_6PACK_EXT_V2 CACHE)
 unset(BOARD_CNC_BOOSTERPACK CACHE)
 unset(BOARD_ESPDUINO32 CACHE)
 unset(BOARD_SOURCERABBIT_4AXIS CACHE)

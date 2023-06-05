@@ -159,7 +159,9 @@ typedef struct {
   #include "bdring_v3.5_map.h"
 #elif defined(BOARD_BDRING_I2S6A)
   #include "bdring_i2s_6_axis_map.h"
-#elif defined(BOARD_BDRING_I2S_6PACK_EXT_V2)
+#elif defined(BOARD_FLUIDNC_I2S_6PACK_UNI)
+  #include "bdring_i2s_6pack_uni_map.h"
+#elif defined(BOARD_FLUIDNC_I2S_6PACK_EXT_V2)
   #include "bdring_i2s_6pack_ext_v2_map.h"
 #elif defined(BOARD_ESPDUINO32)
   #include "espduino-32_wemos_d1_r32_uno_map.h"

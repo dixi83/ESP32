@@ -21,7 +21,7 @@
   along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define BOARD_NAME "BDRING 6-Pack External drives V2.0"
+#define BOARD_NAME "FluidNC I2S 6-Pack External drives V2.0"
 
 #define USE_I2S_OUT
 #define I2S_OUT_PIN_BASE 64
@@ -35,10 +35,10 @@
 // Pin mapping when using SPI mode.
 // With this mapping, SD card can be used both in SPI and 1-line SD mode.
 // Note that a pull-up on CS line is required in SD mode.
-#define PIN_NUM_MISO            19
-#define PIN_NUM_MOSI            23
-#define PIN_NUM_CLK             18
-#define PIN_NUM_CS              5
+#define PIN_NUM_MISO            GPIO_NUM_19
+#define PIN_NUM_MOSI            GPIO_NUM_23
+#define PIN_NUM_CLK             GPIO_NUM_18
+#define PIN_NUM_CS              GPIO_NUM_5
 
 #endif // SDCARD_ENABLE
 
@@ -90,9 +90,9 @@
 
 // Define spindle enable and spindle direction output pins.
 
-#define SPINDLEPWMPIN           I2SO(24)
-#define SPINDLE_ENABLE_PIN      I2SO(25)
-#define SPINDLE_DIRECTION_PIN   I2SO(26)
+#define SPINDLEPWMPIN           GPIO_NUM_14 //I2SO(24)
+#define SPINDLE_ENABLE_PIN      GPIO_NUM_13 //I2SO(25)
+#define SPINDLE_DIRECTION_PIN   GPIO_NUM_15 //I2SO(26)
 
 // Define flood and mist coolant enable output pins.
 
